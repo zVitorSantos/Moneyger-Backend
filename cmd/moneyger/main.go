@@ -3,34 +3,30 @@ package main
 import (
     "github.com/gin-gonic/gin"
     "github.com/zVitorSantos/Moneyger-Backend/internal/database"
-    "github.com/zVitorSantos/Moneyger-Backend/api/v1/handlers"
+    "github.com/zVitorSantos/Moneyger-Backend/api/v1/routes"
+    
+    swaggerFiles "github.com/swaggo/files"
+    ginSwagger "github.com/swaggo/gin-swagger"
+    _ "github.com/zVitorSantos/Moneyger-Backend/docs" 
 )
 
-func main() {
-    r := gin.Default()
+// @title Moneyger API
+// @version 1.0
+// @description This is a erver for a financial management application.
+// @termsOfService http://swagger.io/terms/
 
+// @host localhost:8080
+// @BasePath /api/v1
+
+func main() {
     // Initialize database
     db := database.Init()
 
-    // Initialize handlers with database
-    accountHandler := handlers.NewAccountHandler(db)
-    authHandler := handlers.NewAuthHandler(db)
-    budgetHandler := handlers.NewBudgetHandler(db)
-    categoryHandler := handlers.NewCategoryHandler(db)
-    debtLoanHandler := handlers.NewDebtLoanHandler(db)
-    transactionHandler := handlers.NewTransactionHandler(db)
+    // Setup router
+    r := routes.SetupRouter(db)
 
-    // Define routes
-    v1 := r.Group("/api/v1")
-    {
-        v1.POST("/register", authHandler.Register)
-        v1.POST("/login", authHandler.Login)
-        v1.GET("/accounts", accountHandler.GetAccounts)
-        v1.GET("/budgets", budgetHandler.GetBudgets)
-        v1.GET("/categories", categoryHandler.GetCategories)
-        v1.GET("/debts-loans", debtLoanHandler.GetDebtLoans)
-        v1.GET("/transactions", transactionHandler.GetTransactions)
-    }
+    // Swagger
+    r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
     r.Run(":8080")
 }
