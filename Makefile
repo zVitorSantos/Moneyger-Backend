@@ -1,30 +1,18 @@
-.PHONY: help init build run test clean
+.PHONY: all build run clean swag
 
-help:
-    @echo "Usage:"
-    @echo "  make init       Initialize project (install dependencies)"
-    @echo "  make build      Build the application"
-    @echo "  make run        Run the application"
-    @echo "  make test       Run tests"
-    @echo "  make clean      Clean up"
+all: build
 
-# Initialize project
-init:
-    go mod tidy
-
-# Build the application
 build:
-    go build -o moneyger ./cmd/moneyger
-    swag init -g ./cmd/moneyger/main.go -o ./docs/swagger
+    @go build -o moneyger cmd/moneyger/main.go
 
-# Run the application
-run:
-    go run ./cmd/moneyger/main.go
+run: swag build
+    @./moneyger
 
-# Run tests
-test:
-    go test -v ./...
-
-# Clean up
 clean:
-    rm -f moneyger
+    @rm -f moneyger
+
+swag:
+    @swag init -g cmd/moneyger/main.go --output docs
+
+test:
+    @go test -v ./...
