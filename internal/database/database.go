@@ -28,7 +28,7 @@ func Init() *gorm.DB {
         log.Fatal("failed to connect to database: ", err)
     }
 
-    // Migrar o schema
+    // Migrate schema
     db.AutoMigrate(&models.User{}, &models.Account{}, &models.Transaction{}, &models.Category{}, &models.Budget{}, &models.DebtLoan{})
 
     return db
