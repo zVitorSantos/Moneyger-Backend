@@ -1,0 +1,40 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Output of the build
+bin/
+build/
+
+# Vendor directory
+vendor/
+
+# IDE specific files
+.idea/
+*.iml
+
+# Logs
+*.log
+
+# Temporary files
+*.swp
+*.tmp
+*.temp
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Dependency directories for Go
+go.sum
+*.mod
+*.lock
+
+# Kubernetes configuration files
+deployments/k8s/*.yaml
+
+# Environment variables
+.env
