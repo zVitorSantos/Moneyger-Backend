@@ -1,23 +1,34 @@
-package models
+package services
 
 import (
-    "time"
+	"github.com/zVitorSantos/Moneyger-Backend/internal/models"
+	"github.com/zVitorSantos/Moneyger-Backend/internal/repositories"
 )
 
-type Transaction struct {
-    TransactionID   uint      `gorm:"primaryKey"`
-    UserID          uint      `gorm:"not null"`
-    AccountID       uint      `gorm:"not null"`
-    Amount          float64   `gorm:"type:numeric(15,2);not null"`
-    TransactionType string    `gorm:"not null"` // Exemplo: receita, despesa
-    CategoryID      uint
-    Description     string
-    TransactionDate time.Time `gorm:"type:date;not null"`
-    ReceiptURL      string    `gorm:"size:255"`
-    CreatedAt       time.Time `gorm:"autoCreateTime"`
-    UpdatedAt       time.Time `gorm:"autoUpdateTime"`
-    
-    User            User      `gorm:"foreignKey:UserID;constraint:OnDelete:CASCADE"`
-    Account         Account   `gorm:"foreignKey:AccountID;constraint:OnDelete:CASCADE"`
-    Category        Category  `gorm:"foreignKey:CategoryID;constraint:OnDelete:SET NULL"`
+type TransactionService struct {
+	Repo *repositories.TransactionRepository
+}
+
+func NewTransactionService(repo *repositories.TransactionRepository) *TransactionService {
+	return &TransactionService{Repo: repo}
+}
+
+func (s *TransactionService) CreateTransaction(transaction *models.Transaction) error {
+	return s.Repo.CreateTransaction(transaction)
+}
+
+func (s *TransactionService) GetTransactions() ([]models.Transaction, error) {
+	return s.Repo.GetTransactions()
+}
+
+func (s *TransactionService) GetTransactionByID(id uint) (*models.Transaction, error) {
+	return s.Repo.GetTransactionByID(id)
+}
+
+func (s *TransactionService) UpdateTransaction(transaction *models.Transaction) error {
+	return s.Repo.UpdateTransaction(transaction)
+}
+
+func (s *TransactionService) DeleteTransaction(id uint) error {
+	return s.Repo.DeleteTransaction(id)
 }
