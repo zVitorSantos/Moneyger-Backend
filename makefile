@@ -1,12 +1,12 @@
 .PHONY: all build run clean swag test
 
-all: build
+all: run
 
-build:
+build: swag build
 	@go build -o moneyger cmd/moneyger/main.go
 
-run: swag build
-	@./moneyger
+run:swag
+	@go run cmd/moneyger/main.go
 
 clean:
 	@rm -f moneyger
