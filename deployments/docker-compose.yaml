@@ -13,7 +13,9 @@ services:
       - moneyger_network
 
   app:
-    build: .
+    build:
+      context: .
+      dockerfile: deployments/Dockerfile
     command: ["./moneyger"]
     volumes:
       - .:/app
