@@ -7,7 +7,7 @@
 [![Swagger Validator](https://img.shields.io/swagger/valid/3.0?specUrl=https://raw.githubusercontent.com/zVitorSantos/Moneyger-Backend/main/docs/swagger.yaml)](https://validator.swagger.io/validator/debug?url=https://raw.githubusercontent.com/zVitorSantos/Moneyger-Backend/main/docs/swagger.yaml)
 
 
-## Backend for a minimalist Money Management API designed to support a Vue interface.
+# Backend for a minimalist Money Management API designed to support a Vue interface.
 
 ## Table of Contents
 
@@ -21,26 +21,26 @@
 8. [Technologies Used](#technologies-used)
 9. [Future Steps](#future-steps)
 
-### Checklist
+## Checklist
 
-#### Implementation Stages
+### Implementation Stages
 
-1. **Initial Setup**
+1. ## Initial Setup
    - [x] Set up development environment
    - [x] Initialize Git repository and configure GitHub
    - [x] Configure Go Modules
 
-2. **Database**
+2. ## Database
    - [x] Choose and configure database (PostgreSQL)
    - [x] Define data model
    - [x] Create migrations for initial tables
 
-3. **Project Structure**
+3. ## Project Structure
    - [x] Create basic project structure
    - [x] Implement basic CRUD for main entities
    - [ ] Implement authentication and authorization
 
-4. **API Documentation**
+4. ## API Documentation
    - [x] Set up Swagger for API documentation
    - [ ] Validate Swagger documentation
    - [ ] Add missing documentation:
@@ -48,7 +48,7 @@
      - [ ] Endpoints for transaction management
      - [ ] Authentication flow
 
-5. **Testing and CI/CD**
+5. ## Testing and CI/CD
    - [x] Set up unit tests
    - [ ] Implement integration tests
    - [x] Configure GitHub Actions for CI/CD
@@ -57,14 +57,14 @@
    - [ ] Implement automated deployment to staging
    - [ ] Implement automated deployment to production
 
-6. **Containerization**
+6. ## Containerization
    - [x] Create Dockerfile for the application
    - [x] Set up Docker Compose for development environment
    - [ ] Configure Docker for production environment
    - [ ] Set up Kubernetes for container orchestration
    - [ ] Create Helm charts for Kubernetes deployments
 
-7. **Continuous Development**
+7. ## Continuous Development
    - [ ] Configure complete CI/CD pipeline
    - [ ] Set up automated tests in CI/CD pipeline
    - [ ] Set up monitoring and alerting with Prometheus & Grafana
@@ -74,7 +74,7 @@
    - [ ] Develop frontend interface in Vue.js
    - [ ] Test and validate full integration between backend and frontend
 
-#### Technologies Used
+### Technologies Used
 
 - [x] Go
 - [x] PostgreSQL
@@ -89,7 +89,7 @@
 - [ ] Codecov for test coverage
 - [ ] Kubernetes for container orchestration
 
-#### Future Steps
+### Future Steps
 
 - [ ] Implement more functionalities in the backend
 - [ ] Develop frontend interface in Vue.js
