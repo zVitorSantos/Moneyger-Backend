@@ -7,7 +7,7 @@
 [![Swagger Validator](https://img.shields.io/swagger/valid/3.0?specUrl=https://raw.githubusercontent.com/zVitorSantos/Moneyger-Backend/main/docs/swagger.yaml)](https://validator.swagger.io/validator/debug?url=https://raw.githubusercontent.com/zVitorSantos/Moneyger-Backend/main/docs/swagger.yaml)
 
 
-# Backend for a minimalist Money Management API designed to support a Vue interface.
+### Backend for a minimalist Money Management API designed to support a Vue interface.
 
 ## Table of Contents
 
