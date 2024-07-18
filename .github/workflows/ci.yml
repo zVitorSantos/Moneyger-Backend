@@ -45,7 +45,6 @@ jobs:
     - name: Initialize Go module
       run: |
         cd $GITHUB_WORKSPACE
-        go mod init github.com/zVitorSantos/Moneyger-Backend || true
         go mod tidy
 
     - name: Build Docker image

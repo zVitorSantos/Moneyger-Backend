@@ -28,9 +28,6 @@ vendor/
 node_modules/
 jspm_packages/
 
-# Dependency directories for Go
-go.sum
-*.mod
 *.lock
 
 # Kubernetes configuration files
