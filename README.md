@@ -52,7 +52,7 @@
    - [x] Set up unit tests
    - [ ] Implement integration tests
    - [x] Configure GitHub Actions for CI/CD
-   - [ ] Integrate Codecov for test coverage
+   - [x] Integrate Codecov for test coverage
    - [ ] Set up staging environment
    - [ ] Implement automated deployment to staging
    - [ ] Implement automated deployment to production
