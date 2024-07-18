@@ -47,6 +47,9 @@ jobs:
         cd $GITHUB_WORKSPACE
         go mod tidy
 
+    - name: Ensure Go code is formatted
+      run: gofmt -s -w .
+
     - name: Build Docker image
       run: docker build -t moneyger-backend -f deployments/Dockerfile .
 
