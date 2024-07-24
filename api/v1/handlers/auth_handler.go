@@ -24,7 +24,7 @@ type User struct {
 	Password string `json:"password" binding:"required"`
 }
 
-var jwtSecret = []byte("your_jwt_secret_key")
+var jwtSecret = []byte("")
 
 // @Summary Register a new user
 // @Description Register a new user with username and password

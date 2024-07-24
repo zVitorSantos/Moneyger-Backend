@@ -8,7 +8,7 @@ import (
 	"github.com/golang-jwt/jwt"
 )
 
-var jwtKey = []byte("your_secret_key")
+var jwtKey = []byte("")
 
 func AuthMiddleware() gin.HandlerFunc {
 	return func(c *gin.Context) {
