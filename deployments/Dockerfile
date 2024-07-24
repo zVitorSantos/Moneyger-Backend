@@ -8,6 +8,7 @@ RUN go mod download
 
 COPY . .
 COPY deployments/.env .env
+COPY .env.example .env.example
 RUN ls -la /app
 
 RUN go build -o moneyger cmd/moneyger/main.go
