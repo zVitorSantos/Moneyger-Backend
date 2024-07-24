@@ -7,9 +7,11 @@ COPY go.sum .
 RUN go mod download
 
 COPY . .
+COPY deployments/.env .env
+RUN ls -la /app
 
-RUN go build -o /moneyger cmd/moneyger/main.go
+RUN go build -o moneyger cmd/moneyger/main.go
 
 EXPOSE 8080
 
-CMD ["/moneyger"]
+CMD ["./moneyger"]
