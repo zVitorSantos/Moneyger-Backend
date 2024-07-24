@@ -1,11 +1,11 @@
-.PHONY: all build run clean swag test
+.PHONY: all build run clean swag test docker-up docker-down
 
 all: run
 
-build: swag build
+build: swag
 	@go build -o moneyger cmd/moneyger/main.go
 
-run:swag
+run: swag
 	@go run cmd/moneyger/main.go
 
 clean:
@@ -16,3 +16,9 @@ swag:
 
 test:
 	@go test -v ./...
+
+docker-up:
+	@cd deployments && docker-compose up --build
+
+docker-down:
+	@cd deployments && docker-compose down
